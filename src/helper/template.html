@@ -1,131 +1,421 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>परीक्षा प्रपत्र - 2026</title>
-  <style>
-    body {
-      font-family: "Noto Sans Devanagari", Arial, sans-serif;
-      margin: 100rem auto;
-      color: #000;
-    }
-    .row {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .field {
-      flex: 1;
-      min-width: 250px;
-      margin: 5px 10px 5px 0;
-    }
-    .field input {
-      width: 200px;
-      border: none;
-      border-bottom: 1px solid #000;
-      background: transparent;
-      font-size: 16px;
-    }
-    .title-center {
-      text-align: center;
-    }
-    .section {
-      margin: 20px 0;
-    }
-    .signature {
-      text-align: right;
-      margin-top: 40px;
-    }
-    .signature img {
-      height: 60px;
-    }
-    hr {
-      margin: 50px 0;
-    }
-    @media print {
-      input {
-        border: none;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बोर्ड परीक्षा 2026 फॉर्म</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* A4 फॉर्मेट के लिए कस्टम स्टाइल और फॉन्ट */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* सामग्री ओवरफ्लो होने पर बेहतर स्क्रॉलिंग के लिए शीर्ष पर संरेखित करें */
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .a4-page {
+            width: 100%; /* स्क्रीन की पूरी चौड़ाई लें */
+            max-width: 210mm; /* A4 चौड़ाई के बराबर अधिकतम चौड़ाई */
+            min-height: 297mm; /* A4 ऊँचाई, सामग्री के विस्तार की अनुमति देने के लिए न्यूनतम ऊँचाई */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 25mm; /* चारों ओर लगभग 1 इंच पैडिंग */
+            box-sizing: border-box; /* चौड़ाई/ऊँचाई में पैडिंग शामिल करें */
+        }
+        /* फॉर्म फ़ील्ड के लिए स्टाइलिंग */
+        .form-field {
+            display: flex;
+            align-items: center;
+            padding: 4px 0; /* प्रत्येक फ़ील्ड के लिए वर्टिकल पैडिंग */
+            width: 100%; /* सुनिश्चित करें कि फॉर्म-फ़ील्ड अपने पैरेंट की पूरी चौड़ाई लेता है */
+        }
+        .form-label {
+            flex-shrink: 0; /* लेबल को सिकुड़ने से रोकें */
+            /* width: 180px; पुरानी निश्चित चौड़ाई, अब इसे हटा दिया गया है या ऑटो कर दिया गया है */
+            width: auto; /* लेबल की चौड़ाई को उसके कंटेंट के हिसाब से एडजस्ट करें */
+            font-size: 0.875rem; /* टेक्स्ट-स्मॉल */
+            color: #333;
+            padding-right: 8px; /* लेबल और इनपुट के बीच थोड़ी जगह */
+            white-space: nowrap; /* सुनिश्चित करें कि लेबल एक ही लाइन में रहे */
+        }
+        .form-input {
+            flex-grow: 1; /* इनपुट शेष स्थान लेता है */
+            border: none; /* सभी बॉर्डर पारदर्शी करें */
+            border-bottom: 1px solid #ccc; /* केवल निचली बॉर्डर दिखाई दे */
+            padding: 2px 0;
+            font-size: 0.875rem; /* टेक्स्ट-स्मॉल */
+            color: #555;
+            outline: none; /* फोकस पर आउटलाइन हटाएँ */
+            background-color: transparent; /* सुनिश्चित करें कि बैकग्राउंड पारदर्शी है */
+            width: 100%; /* सुनिश्चित करें कि इनपुट अपने फ्लेक्स कंटेनर की पूरी चौड़ाई लेता है */
+            min-width: 0; /* फ्लेक्स आइटम के लिए आवश्यक, ताकि यह सिकुड़ सके */
+        }
+        .signature-box {
+            width: 150px;
+            height: 70px;
+            border: 1px dashed #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.75rem; /* टेक्स्ट-एक्सएस */
+            color: #999;
+            overflow: hidden; /* सुनिश्चित करें कि छवि फिट बैठती है */
+        }
+        .signature-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* सुनिश्चित करें कि छवि बॉक्स के भीतर फिट बैठती है */
+        }
+        /* दो-कॉलम लेआउट के लिए विशिष्ट समायोजन */
+        .two-col-container {
+            display: flex;
+            flex-wrap: wrap; /* छोटी स्क्रीन पर रैप करने की अनुमति दें */
+            margin-bottom: 8px; /* पंक्तियों के बीच मार्जिन */
+        }
+        .two-col-item {
+            flex: 1; /* उपलब्ध स्थान को समान रूप से साझा करें */
+            min-width: 280px; /* सुनिश्चित करें कि छोटी स्क्रीन पर आइटम सिकुड़ते नहीं हैं */
+            padding-right: 16px; /* आइटम के बीच जगह */
+        }
+        .two-col-item:last-child {
+            padding-right: 0; /* अंतिम आइटम पर पैडिंग हटाएँ */
+        }
+        /* छोटी स्क्रीन के लिए रिस्पॉन्सिव एडजस्टमेंट */
+        @media (max-width: 768px) {
+            .a4-page {
+                padding: 15mm; /* छोटी स्क्रीन पर पैडिंग कम करें */
+            }
+            .form-label {
+                width: auto; /* छोटी स्क्रीन पर लेबल की चौड़ाई ऑटो रखें */
+                white-space: normal; /* लेबल को रैप करने की अनुमति दें */
+            }
+            .two-col-item {
+                flex: 1 1 100%; /* छोटी स्क्रीन पर प्रत्येक आइटम को पूरी चौड़ाई दें */
+                padding-right: 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="a4-page flex flex-col">
+        <!-- हेडर सेक्शन -->
+        <div class="flex justify-between items-start mb-6">
+            <div class="text-sm">परीक्षण/2026</div>
+            <div class="flex flex-col items-center text-center">
+                <div class="text-base font-semibold">माध्यमिक शिक्षा बोर्ड, राजस्थान, अजमेर</div>
+                <div class="text-sm font-medium mt-1">आवेदन पत्र एवं परीक्षा शुल्क विवरण वर्ष - 2026</div>
+            </div>
+            <div class="text-sm">परीक्षा प्रपत्र - 128</div>
+        </div>
 
-<div class="row">
-  <div><strong>परीक्षा/2026</strong></div>
-  <div><strong>परीक्षा प्रपत्र - 128</strong></div>
-</div>
+        <!-- मुख्य फॉर्म सेक्शन -->
+        <div class="flex flex-col flex-grow">
+            <!-- पहली पंक्ति (विद्यालय का नाम) -->
+            <div class="two-col-container">
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">विद्यालय का नाम -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">विद्यालय कोड -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+            </div>
 
-<div class="title-center">
-  <h2>माध्यमिक शिक्षा बोर्ड, राजस्थान, अजमेर</h2>
-  <h3>आवेदन पत्र एवं परीक्षा शुल्क विवरण वर्ष - 2026</h3>
-</div>
+            <!-- दूसरी पंक्ति (संस्थाप्रधान का नाम) -->
+            <div class="two-col-container">
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">संस्थाप्रधान का नाम -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">मोबाइल नं. -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+            </div>
 
-<div class="row">
-  <div class="field">विद्यालय का नाम - <input type="text"></div>
-  <div class="field">विद्यालय कोड - <input type="text"></div>
-</div>
-<div class="row">
-  <div class="field">संस्थाध्यक्ष का नाम - <input type="text"></div>
-  <div class="field">मोबाइल नं. - <input type="text"></div>
-</div>
+            <!-- कक्षा 12 नियमित आवेदन -->
+            <div class="flex flex-col border border-gray-300 rounded-md p-2 mb-4">
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कक्षा 12 कुल (नियमित) आवेदन -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कुल शुल्क -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 2 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 3 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="section">
-  <div>कक्षा 12 कुल (नियमित) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 2 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 3 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-</div>
+            <!-- कक्षा 12 स्वयंपाठी आवेदन -->
+            <div class="flex flex-col border border-gray-300 rounded-md p-2 mb-4">
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कक्षा 12 कुल (स्वयंपाठी) आवेदन -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कुल शुल्क -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="section">
-  <div>कक्षा 12 कुल (स्वंयपाठी) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-</div>
+            <!-- कक्षा 10 नियमित आवेदन -->
+            <div class="flex flex-col border border-gray-300 rounded-md p-2 mb-4">
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कक्षा 10 कुल (नियमित) आवेदन -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कुल शुल्क -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 2 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 3 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="section">
-  <div>कक्षा 10 कुल (नियमित) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 2 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 3 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-</div>
+            <!-- कक्षा 10 स्वयंपाठी आवेदन -->
+            <div class="flex flex-col border border-gray-300 rounded-md p-2 mb-8">
+                <div class="two-col-container mb-1">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कक्षा 10 कुल (स्वयंपाठी) आवेदन -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">कुल शुल्क -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="two-col-container">
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                    <div class="two-col-item">
+                        <div class="form-field">
+                            <span class="form-label">दिनांक -</span>
+                            <input type="text" class="form-input" />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="section">
-  <div>कक्षा 10 कुल (स्वंयपाठी) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
-  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
-</div>
+            <!-- हस्ताक्षर सेक्शन 1 -->
+            <div class="flex justify-end mb-8">
+                <div class="flex flex-col items-center mr-16">
+                    <div class="signature-box mb-1">
+                        <!-- हस्ताक्षर छवि के लिए प्लेसहोल्डर -->
+                        <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
+                    </div>
+                    <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
+                    <div class="text-xs text-gray-600"></div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="signature-box mb-1">
+                        <!-- हस्ताक्षर छवि के लिए प्लेसहोल्डर -->
+                        <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
+                    </div>
+                    <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
+                    <div class="text-xs text-gray-600">बोर्ड नोडल केंद्र (04/20)</div>
+                </div>
+            </div>
 
-<div class="signature">
-  <img src="signature.jpg" alt="Signature">
-  <p>हस्ताक्षर प्राधिकारी<br>बोर्ड नोडल केन्द्र (04/20)</p>
-</div>
+            <!-- उपस्थिति प्रमाण पत्र सेक्शन -->
+            <div class="flex flex-col items-center text-center mb-8">
+                <div class="text-base font-semibold mb-2">कार्यालय बोर्ड नोडल केंद्र पीएम महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</div>
+                <div class="text-sm font-medium mb-4 underline">उपस्थिति प्रमाण पत्र</div>
+            </div>
 
-<hr>
+            <div class="two-col-container mb-2">
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">क्रमांक -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">दिनांक -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+            </div>
 
-<div class="title-center">
-  <p>कार्यालय बोर्ड नोडल केंद्र पीएमश्री महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</p>
-  <h3>उपस्थिति प्रमाण पत्र</h3>
-</div>
+            <!-- "प्रमाणित किया जाता है" सेक्शन के लिए सही संरचना -->
+            <div class="two-col-container mb-2">
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">प्रमाणित किया जाता है कि श्री/श्रीमती -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+                <div class="two-col-item">
+                    <div class="form-field">
+                        <span class="form-label">पद -</span>
+                        <input type="text" class="form-input" />
+                    </div>
+                </div>
+            </div>
 
-<div class="row">
-  <div class="field">क्रमांक - <input type="text"></div>
-  <div class="field">दिनांक - <input type="text"></div>
-</div>
-<div class="section">
-  प्रमाणित किया जाता है कि श्री/श्रीमती - <input type="text"> &nbsp;&nbsp;&nbsp; पद - <input type="text">
-</div>
-<div class="section">
-  पदस्थापन स्थान - <input type="text">
-</div>
-<div class="section">
-  जमा करवाने हेतु आज दिनांक - <input type="text"> &nbsp;&nbsp;&nbsp; को अपनी उपस्थिति इस कार्यालय में दी
-</div>
+            <div class="flex flex-wrap items-center mb-8">
+                <div class="form-field flex-1 mr-2">
+                    <span class="form-label">पदस्थापन स्थान -</span>
+                    <input type="text" class="form-input" />
+                </div>
+                <span class="text-sm mr-2">ने बोर्ड परीक्षा 2026 के आवेदन पत्र</span>
+            </div>
 
-<div class="signature">
-  <img src="signature.jpg" alt="Signature">
-  <p>हस्ताक्षर प्राधिकारी<br>बोर्ड नोडल केन्द्र (04/20)</p>
-</div>
+            <div class="flex flex-wrap items-center mb-8">
+                <div class="form-field flex-1 mr-2">
+                    <span class="form-label">जमा करवाने हेतु आज दिनांक -</span>
+                    <input type="text" class="form-input" />
+                </div>
+                <span class="text-sm mr-2">को अपनी उपस्थिति इस कार्यालय में दी</span>
+            </div>
 
+            <!-- हस्ताक्षर सेक्शन 2 -->
+            <div class="flex justify-end">
+                <div class="flex flex-col items-center">
+                    <div class="signature-box mb-1">
+                        <!-- हस्ताक्षर छवि के लिए प्लेसहोल्डर -->
+                        <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
+                    </div>
+                    <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
+                    <div class="text-xs text-gray-600">बोर्ड नोडल केंद्र (04/20)</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
