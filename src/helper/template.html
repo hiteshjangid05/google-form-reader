@@ -1,22 +1,131 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>परीक्षा प्रपत्र - 2026</title>
+  <style>
+    body {
+      font-family: "Noto Sans Devanagari", Arial, sans-serif;
+      margin: 100rem auto;
+      color: #000;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .field {
+      flex: 1;
+      min-width: 250px;
+      margin: 5px 10px 5px 0;
+    }
+    .field input {
+      width: 200px;
+      border: none;
+      border-bottom: 1px solid #000;
+      background: transparent;
+      font-size: 16px;
+    }
+    .title-center {
+      text-align: center;
+    }
+    .section {
+      margin: 20px 0;
+    }
+    .signature {
+      text-align: right;
+      margin-top: 40px;
+    }
+    .signature img {
+      height: 60px;
+    }
+    hr {
+      margin: 50px 0;
+    }
+    @media print {
+      input {
+        border: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Template Page</h1>
-    </header>                                                                                                                       
-    <main>
-        <p>This is a simple template for your HTML page.</p>
-        <p>Feel free to modify it as needed.</p>
-    </main>
-    <footer>                    
-        <p>&copy; 2023 Your Company</p>
-    </footer>
-    <script src="script.js"></script>                                                                       
+
+<div class="row">
+  <div><strong>परीक्षा/2026</strong></div>
+  <div><strong>परीक्षा प्रपत्र - 128</strong></div>
+</div>
+
+<div class="title-center">
+  <h2>माध्यमिक शिक्षा बोर्ड, राजस्थान, अजमेर</h2>
+  <h3>आवेदन पत्र एवं परीक्षा शुल्क विवरण वर्ष - 2026</h3>
+</div>
+
+<div class="row">
+  <div class="field">विद्यालय का नाम - <input type="text"></div>
+  <div class="field">विद्यालय कोड - <input type="text"></div>
+</div>
+<div class="row">
+  <div class="field">संस्थाध्यक्ष का नाम - <input type="text"></div>
+  <div class="field">मोबाइल नं. - <input type="text"></div>
+</div>
+
+<div class="section">
+  <div>कक्षा 12 कुल (नियमित) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 2 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 3 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+</div>
+
+<div class="section">
+  <div>कक्षा 12 कुल (स्वंयपाठी) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+</div>
+
+<div class="section">
+  <div>कक्षा 10 कुल (नियमित) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 2 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 3 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+</div>
+
+<div class="section">
+  <div>कक्षा 10 कुल (स्वंयपाठी) आवेदन - <input type="text"> &nbsp;&nbsp;&nbsp; कुल शुल्क - <input type="text"></div>
+  <div>ट्रांजेक्शन नं. 1 - <input type="text"> &nbsp;&nbsp;&nbsp; दिनांक - <input type="text"></div>
+</div>
+
+<div class="signature">
+  <img src="signature.jpg" alt="Signature">
+  <p>हस्ताक्षर प्राधिकारी<br>बोर्ड नोडल केन्द्र (04/20)</p>
+</div>
+
+<hr>
+
+<div class="title-center">
+  <p>कार्यालय बोर्ड नोडल केंद्र पीएमश्री महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</p>
+  <h3>उपस्थिति प्रमाण पत्र</h3>
+</div>
+
+<div class="row">
+  <div class="field">क्रमांक - <input type="text"></div>
+  <div class="field">दिनांक - <input type="text"></div>
+</div>
+<div class="section">
+  प्रमाणित किया जाता है कि श्री/श्रीमती - <input type="text"> &nbsp;&nbsp;&nbsp; पद - <input type="text">
+</div>
+<div class="section">
+  पदस्थापन स्थान - <input type="text">
+</div>
+<div class="section">
+  जमा करवाने हेतु आज दिनांक - <input type="text"> &nbsp;&nbsp;&nbsp; को अपनी उपस्थिति इस कार्यालय में दी
+</div>
+
+<div class="signature">
+  <img src="signature.jpg" alt="Signature">
+  <p>हस्ताक्षर प्राधिकारी<br>बोर्ड नोडल केन्द्र (04/20)</p>
+</div>
+
 </body>
 </html>
