@@ -7,7 +7,7 @@ function App() {
 
   // Replace with your published CSV URL
   const CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5JcQrJmXSJ4FWFLXgR6wYmor08ww8159YjzGFH7XlJT1XkzhAff2m5j043ixe0Ll8U1fNkDtt8TdN/pub?gid=173376634&single=true&output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQDq0KCvsfUyhg5cpmcJ9KIkRthoDhi95W1k_37Cnid5Ww6A09ZEcJXJkqaMJXCvoiugEWuR22AfDv/pub?gid=1581606071&single=true&output=csv";
 
   useEffect(() => {
     fetch(CSV_URL)
@@ -44,6 +44,9 @@ function App() {
                 {Object.values(row).map((value, j) => (
                   <td key={j}>{value}</td>
                 ))}
+              <td>
+                <button>Approve</button>
+              </td>
               </tr>
             ))}
           </tbody>
