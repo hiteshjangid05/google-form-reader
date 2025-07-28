@@ -1,3 +1,5 @@
+export default function generateHtmlFromTemplate(rowData) {
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,53 +9,50 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* A4 फॉर्मेट के लिए कस्टम स्टाइल और फॉन्ट */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* सामग्री ओवरफ्लो होने पर बेहतर स्क्रॉलिंग के लिए शीर्ष पर संरेखित करें */
+            align-items: flex-start;
             min-height: 100vh;
             padding: 20px;
         }
         .a4-page {
-            width: 100%; /* स्क्रीन की पूरी चौड़ाई लें */
-            max-width: 210mm; /* A4 चौड़ाई के बराबर अधिकतम चौड़ाई */
-            min-height: 297mm; /* A4 ऊँचाई, सामग्री के विस्तार की अनुमति देने के लिए न्यूनतम ऊँचाई */
+            width: 100%;
+            max-width: 210mm;
+            min-height: 297mm;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 25mm; /* चारों ओर लगभग 1 इंच पैडिंग */
-            box-sizing: border-box; /* चौड़ाई/ऊँचाई में पैडिंग शामिल करें */
+            padding: 25mm;
+            box-sizing: border-box;
         }
-        /* फॉर्म फ़ील्ड के लिए स्टाइलिंग */
         .form-field {
             display: flex;
             align-items: center;
-            padding: 4px 0; /* प्रत्येक फ़ील्ड के लिए वर्टिकल पैडिंग */
-            width: 100%; /* सुनिश्चित करें कि फॉर्म-फ़ील्ड अपने पैरेंट की पूरी चौड़ाई लेता है */
+            padding: 4px 0;
+            width: 100%;
         }
         .form-label {
-            flex-shrink: 0; /* लेबल को सिकुड़ने से रोकें */
-            /* width: 180px; पुरानी निश्चित चौड़ाई, अब इसे हटा दिया गया है या ऑटो कर दिया गया है */
-            width: auto; /* लेबल की चौड़ाई को उसके कंटेंट के हिसाब से एडजस्ट करें */
-            font-size: 0.875rem; /* टेक्स्ट-स्मॉल */
+            flex-shrink: 0;
+            width: auto;
+            font-size: 0.875rem;
             color: #333;
-            padding-right: 8px; /* लेबल और इनपुट के बीच थोड़ी जगह */
-            white-space: nowrap; /* सुनिश्चित करें कि लेबल एक ही लाइन में रहे */
+            padding-right: 8px;
+            white-space: nowrap;
         }
         .form-input {
-            flex-grow: 1; /* इनपुट शेष स्थान लेता है */
-            border: none; /* सभी बॉर्डर पारदर्शी करें */
-            border-bottom: 1px solid #ccc; /* केवल निचली बॉर्डर दिखाई दे */
+            flex-grow: 1;
+            border: none;
+            border-bottom: 1px solid #ccc;
             padding: 2px 0;
-            font-size: 0.875rem; /* टेक्स्ट-स्मॉल */
+            font-size: 0.875rem;
             color: #555;
-            outline: none; /* फोकस पर आउटलाइन हटाएँ */
-            background-color: transparent; /* सुनिश्चित करें कि बैकग्राउंड पारदर्शी है */
-            width: 100%; /* सुनिश्चित करें कि इनपुट अपने फ्लेक्स कंटेनर की पूरी चौड़ाई लेता है */
-            min-width: 0; /* फ्लेक्स आइटम के लिए आवश्यक, ताकि यह सिकुड़ सके */
+            outline: none;
+            background-color: transparent;
+            width: 100%;
+            min-width: 0;
         }
         .signature-box {
             width: 150px;
@@ -61,40 +60,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.75rem; /* टेक्स्ट-एक्सएस */
+            font-size: 0.75rem;
             color: #999;
-            overflow: hidden; /* सुनिश्चित करें कि छवि फिट बैठती है */
+            overflow: hidden;
         }
         .signature-img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* सुनिश्चित करें कि छवि बॉक्स के भीतर फिट बैठती है */
+            object-fit: contain;
         }
-        /* दो-कॉलम लेआउट के लिए विशिष्ट समायोजन */
         .two-col-container {
             display: flex;
-            flex-wrap: wrap; /* छोटी स्क्रीन पर रैप करने की अनुमति दें */
-            margin-bottom: 8px; /* पंक्तियों के बीच मार्जिन */
+            flex-wrap: wrap;
+            margin-bottom: 8px;
         }
         .two-col-item {
-            flex: 1; /* उपलब्ध स्थान को समान रूप से साझा करें */
-            min-width: 280px; /* सुनिश्चित करें कि छोटी स्क्रीन पर आइटम सिकुड़ते नहीं हैं */
-            padding-right: 16px; /* आइटम के बीच जगह */
+            flex: 1;
+            min-width: 280px;
+            padding-right: 16px;
         }
         .two-col-item:last-child {
-            padding-right: 0; /* अंतिम आइटम पर पैडिंग हटाएँ */
+            padding-right: 0;
         }
-        /* छोटी स्क्रीन के लिए रिस्पॉन्सिव एडजस्टमेंट */
         @media (max-width: 768px) {
             .a4-page {
-                padding: 15mm; /* छोटी स्क्रीन पर पैडिंग कम करें */
+                padding: 15mm;
             }
             .form-label {
-                width: auto; /* छोटी स्क्रीन पर लेबल की चौड़ाई ऑटो रखें */
-                white-space: normal; /* लेबल को रैप करने की अनुमति दें */
+                width: auto;
+                white-space: normal;
             }
             .two-col-item {
-                flex: 1 1 100%; /* छोटी स्क्रीन पर प्रत्येक आइटम को पूरी चौड़ाई दें */
+                flex: 1 1 100%;
                 padding-right: 0;
             }
         }
@@ -111,7 +108,6 @@
             </div>
             <div class="text-sm">परीक्षा प्रपत्र - 128</div>
         </div>
-
         <!-- मुख्य फॉर्म सेक्शन -->
         <div class="flex flex-col flex-grow">
             <!-- पहली पंक्ति (विद्यालय का नाम) -->
@@ -129,7 +125,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- दूसरी पंक्ति (संस्थाप्रधान का नाम) -->
             <div class="two-col-container">
                 <div class="two-col-item">
@@ -145,7 +140,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- कक्षा 12 नियमित आवेदन -->
             <div class="flex flex-col">
                 <div class="two-col-container mb-1">
@@ -205,7 +199,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- कक्षा 12 स्वयंपाठी आवेदन -->
             <div class="flex flex-col">
                 <div class="two-col-container mb-1">
@@ -237,7 +230,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- कक्षा 10 नियमित आवेदन -->
             <div class="flex flex-col">
                 <div class="two-col-container mb-1">
@@ -297,7 +289,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- कक्षा 10 स्वयंपाठी आवेदन -->
             <div class="flex flex-col">
                 <div class="two-col-container mb-1">
@@ -329,12 +320,10 @@
                     </div>
                 </div>
             </div>
-
             <!-- हस्ताक्षर सेक्शन 1 -->
             <div class="flex justify-end mb-8">
                 <div class="flex flex-col items-center mr-16">
                     <div class="signature-box mb-1">
-                        <!-- हस्ताक्षर छवि के लिए प्लेसहोल्डर -->
                         <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
                     </div>
                     <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
@@ -342,20 +331,17 @@
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="signature-box mb-1">
-                        <!-- हस्ताक्षर छवि के लिए प्लेसहोल्डर -->
                         <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
                     </div>
                     <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
                     <div class="text-xs text-gray-600">बोर्ड नोडल केंद्र (04/20)</div>
                 </div>
             </div>
-
             <!-- उपस्थिति प्रमाण पत्र सेक्शन -->
             <div class="flex flex-col items-center text-center mb-8">
                 <div class="text-base font-semibold mb-2">कार्यालय बोर्ड नोडल केंद्र पीएम महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</div>
                 <div class="text-sm font-medium mb-4 underline">उपस्थिति प्रमाण पत्र</div>
             </div>
-
             <div class="two-col-container mb-2">
                 <div class="two-col-item">
                     <div class="form-field">
@@ -370,8 +356,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- "प्रमाणित किया जाता है" सेक्शन के लिए सही संरचना -->
             <div class="two-col-container mb-2">
                 <div class="two-col-item">
                     <div class="form-field">
@@ -386,7 +370,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="flex flex-wrap items-center mb-8">
                 <div class="form-field flex-1 mr-2">
                     <span class="form-label">पदस्थापन स्थान -</span>
@@ -394,7 +377,6 @@
                 </div>
                 <span class="text-sm mr-2">ने बोर्ड परीक्षा 2026 के आवेदन पत्र</span>
             </div>
-
             <div class="flex flex-wrap items-center mb-8">
                 <div class="form-field flex-1 mr-2">
                     <span class="form-label">जमा करवाने हेतु आज दिनांक -</span>
@@ -402,13 +384,11 @@
                 </div>
                 <span class="text-sm mr-2">को अपनी उपस्थिति इस कार्यालय में दी</span>
             </div>
-
             <!-- हस्ताक्षर सेक्शन 2 -->
             <div class="flex justify-end">
                 <div class="flex flex-col items-center">
                     <div class="signature-box mb-1">
-                        <!-- हस्ताक्षर छवि के लिए प्लेसहोल्डर -->
-                        <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
+                        <img src="/signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
                     </div>
                     <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
                     <div class="text-xs text-gray-600">बोर्ड नोडल केंद्र (04/20)</div>
@@ -416,5 +396,19 @@
             </div>
         </div>
     </div>
+    <script>
+      const data = ${JSON.stringify(rowData)};
+      Object.entries(data).forEach(([key, value]) => {
+        let el = document.getElementById(key) || document.getElementById(toCamelCase(key));
+        if (el) el.textContent = value;
+      });
+      function toCamelCase(str) {
+        return str
+          .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())
+          .replace(/[^a-zA-Z0-9]/g, '');
+      }
+    </script>
 </body>
 </html>
+  `;
+}
