@@ -115,13 +115,13 @@ export default function generateHtmlFromTemplate(rowData) {
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">विद्यालय का नाम -</span>
-                        <p id="schoolName" type="text" class="form-input" />
+                        <p id="schoolName" type="text" class="form-input">${rowData["SCHOOL NAME"]}</p>
                     </div>
                 </div>
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">विद्यालय कोड -</span>
-                        <p id="schoolCode" type="text" class="form-input" />
+                        <p id="schoolCode" type="text" class="form-input"></p>
                     </div>
                 </div>
             </div>
@@ -130,13 +130,13 @@ export default function generateHtmlFromTemplate(rowData) {
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">संस्थाप्रधान का नाम -</span>
-                        <p id="principalName" type="text" class="form-input" />
+                        <p id="principalName" type="text" class="form-input"></p>
                     </div>
                 </div>
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">मोबाइल नं. -</span>
-                        <p id="principalMobileNo" type="text" class="form-input" />
+                        <p id="principalMobileNo" type="text" class="form-input"></p>
                     </div>
                 </div>
             </div>
@@ -146,13 +146,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 12 कुल (नियमित) आवेदन -</span>
-                            <p id="class12RegTotalForm" type="text" class="form-input" />
+                            <p id="class12RegTotalForm" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class12RegTotalFee" type="text" class="form-input" />
+                            <p id="class12RegTotalFee" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -160,13 +160,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class12RegTxnNo1" type="text" class="form-input" />
+                            <p id="class12RegTxnNo1" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12RegTxnNo1Date" type="text" class="form-input" />
+                            <p id="class12RegTxnNo1Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -174,13 +174,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 2 -</span>
-                            <p id="class12RegTxnNo2" type="text" class="form-input" />
+                            <p id="class12RegTxnNo2" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12RegTxnNo2Date" type="text" class="form-input" />
+                            <p id="class12RegTxnNo2Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -188,13 +188,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 3 -</span>
-                            <p id="class12RegTxnNo3" type="text" class="form-input" />
+                            <p id="class12RegTxnNo3" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12RegTxnNo3Date" type="text" class="form-input" />
+                            <p id="class12RegTxnNo3Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -205,13 +205,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 12 कुल (स्वयंपाठी) आवेदन -</span>
-                            <p id="class12PriTotal" type="text" class="form-input" />
+                            <p id="class12PriTotal" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class12PriTotalFee" type="text" class="form-input" />
+                            <p id="class12PriTotalFee" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -219,13 +219,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class12PriTxnNo1" type="text" class="form-input" />
+                            <p id="class12PriTxnNo1" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12PriTxnNo1Date" type="text" class="form-input" />
+                            <p id="class12PriTxnNo1Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -236,13 +236,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 10 कुल (नियमित) आवेदन -</span>
-                            <p id="class10RegTotalForms" type="text" class="form-input" />
+                            <p id="class10RegTotalForms" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class10RegTotalFee" type="text" class="form-input" />
+                            <p id="class10RegTotalFee" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -250,13 +250,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class10RegTxnNo1" type="text" class="form-input" />
+                            <p id="class10RegTxnNo1" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10RegTxnNo1Date" type="text" class="form-input" />
+                            <p id="class10RegTxnNo1Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -264,13 +264,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 2 -</span>
-                            <p id="class10RegTxnNo2" type="text" class="form-input" />
+                            <p id="class10RegTxnNo2" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10RegTxnNo2Date" type="text" class="form-input" />
+                            <p id="class10RegTxnNo2Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -278,13 +278,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 3 -</span>
-                            <p id="class10RegTxnNo3" type="text" class="form-input" />
+                            <p id="class10RegTxnNo3" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10RegTxnNo3Date" type="text" class="form-input" />
+                            <p id="class10RegTxnNo3Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -295,13 +295,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 10 कुल (स्वयंपाठी) आवेदन -</span>
-                            <p id="class10PriTotal" type="text" class="form-input" />
+                            <p id="class10PriTotal" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class10PriTotalFee" type="text" class="form-input" />
+                            <p id="class10PriTotalFee" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -309,13 +309,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class10PriTxnNo1" type="text" class="form-input" />
+                            <p id="class10PriTxnNo1" type="text" class="form-input"></p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10PriTxnNo1Date" type="text" class="form-input" />
+                            <p id="class10PriTxnNo1Date" type="text" class="form-input"></p>
                         </div>
                     </div>
                 </div>
@@ -346,13 +346,13 @@ export default function generateHtmlFromTemplate(rowData) {
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">क्रमांक -</span>
-                        <input type="text" class="form-input" />
+                        <input type="text" class="form-input"></p>
                     </div>
                 </div>
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">दिनांक -</span>
-                        <p id="attendanceDate" type="text" class="form-input" />
+                        <p id="attendanceDate" type="text" class="form-input"></p>
                     </div>
                 </div>
             </div>
@@ -360,27 +360,27 @@ export default function generateHtmlFromTemplate(rowData) {
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">प्रमाणित किया जाता है कि श्री/श्रीमती -</span>
-                        <p id="EmployeeName" type="text" class="form-input" />
+                        <p id="EmployeeName" type="text" class="form-input"></p>
                     </div>
                 </div>
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">पद -</span>
-                        <p id="Designation" type="text" class="form-input" />
+                        <p id="Designation" type="text" class="form-input"></p>
                     </div>
                 </div>
             </div>
             <div class="flex flex-wrap items-center mb-8">
                 <div class="form-field flex-1 mr-2">
                     <span class="form-label">पदस्थापन स्थान -</span>
-                    <p id="postingPlace" type="text" class="form-input" />
+                    <p id="postingPlace" type="text" class="form-input"></p>
                 </div>
                 <span class="text-sm mr-2">ने बोर्ड परीक्षा 2026 के आवेदन पत्र</span>
             </div>
             <div class="flex flex-wrap items-center mb-8">
                 <div class="form-field flex-1 mr-2">
                     <span class="form-label">जमा करवाने हेतु आज दिनांक -</span>
-                    <p id="attendanceDate" type="text" class="form-input" />
+                    <p id="attendanceDate" type="text" class="form-input"></p>
                 </div>
                 <span class="text-sm mr-2">को अपनी उपस्थिति इस कार्यालय में दी</span>
             </div>
