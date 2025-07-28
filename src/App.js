@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {fetchResponses} from "./utils/fetchResponses";
 import ResponseTable from "./components/ResponseTable";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [responses, setResponses] = useState([]);

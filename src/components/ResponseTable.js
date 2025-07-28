@@ -1,18 +1,34 @@
 import React from "react";
 import generateHtmlFromTemplate  from "../template/htmlTemplate";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import html2pdf from "html2pdf.js";
 
 const ResponseTable = ({ responses }) => {
   const handleApprove = (row) => {
     console.log("Approving row:", row);
     const html = generateHtmlFromTemplate(row);
-    const newWindow = window.open("", "_blank");
-    newWindow.document.write(html);
-    newWindow.document.close();
+
+    // Create a temporary container
+  const container = document.createElement("div");
+  container.innerHTML = html;
+  document.body.appendChild(container);
+
+  // Generate PDF
+  html2pdf()
+    .set({ margin: 0, filename: "form.pdf", html2canvas: { scale: 2 } })
+    .from(container)
+    .save()
+    .then(() => {
+      document.body.removeChild(container); // Clean up
+    });
+    // const newWindow = window.open("", "_blank");
+    // newWindow.document.write(html);
+    // newWindow.document.close();
   };
 
   return (
-    <table border="1" cellPadding="10">
-      <thead>
+    <table className="table table-striped" >
+      <thead className="thead-dark">
         <tr>
           <th>Serial No</th>
           {Object.keys(responses[0] || {}).map((key) => (
@@ -29,7 +45,7 @@ const ResponseTable = ({ responses }) => {
               <td key={j}>{value}</td>
             ))}
             <td>
-              <button onClick={() => handleApprove(row)}>Approve</button>
+              <button className="btn btn-outline-success" onClick={() => handleApprove(row)}>Approve</button>
             </td>
           </tr>
         ))}

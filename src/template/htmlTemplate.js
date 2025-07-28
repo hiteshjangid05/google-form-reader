@@ -37,7 +37,7 @@ export default function generateHtmlFromTemplate(rowData) {
         .form-label {
             flex-shrink: 0;
             width: auto;
-            font-size: 0.875rem;
+            font-size: 0.65rem;
             color: #333;
             padding-right: 8px;
             white-space: nowrap;
@@ -47,7 +47,7 @@ export default function generateHtmlFromTemplate(rowData) {
             border: none;
             border-bottom: 1px solid #ccc;
             padding: 2px 0;
-            font-size: 0.875rem;
+            font-size: 0.65rem;
             color: #555;
             outline: none;
             background-color: transparent;
@@ -100,14 +100,18 @@ export default function generateHtmlFromTemplate(rowData) {
 <body>
     <div class="a4-page flex flex-col">
         <!-- हेडर सेक्शन -->
-        <div class="flex justify-between items-start mb-6">
-            <div class="text-sm">परीक्षण/2026</div>
-            <div class="flex flex-col items-center text-center">
-                <div class="text-base font-semibold">माध्यमिक शिक्षा बोर्ड, राजस्थान, अजमेर</div>
-                <div class="text-sm font-medium mt-1">आवेदन पत्र एवं परीक्षा शुल्क विवरण वर्ष - 2026</div>
-            </div>
-            <div class="text-sm">परीक्षा प्रपत्र - 128</div>
-        </div>
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; width: 100%;">
+  <div style="width: 25%; font-weight: bold; font-size: 0.35rem; text-align: left;">परीक्षा/2026</div>
+  <div style="width: 50%; text-align: center;">
+    <div style="font-size: 0.75rem; font-weight: bold;">माध्यमिक शिक्षा बोर्ड, राजस्थान, अजमेर</div>
+    <div style="font-size: 0.5rem; font-weight: bold; margin-top: 0.5rem;">
+      आवेदन पत्र एवं परीक्षा शुल्क विवरण वर्ष - <span style="font-weight: 500;">2026</span>
+    </div>
+  </div>
+  <div style="width: 25%; font-weight: bold; font-size: 0.35rem; text-align: right;">
+    <span style="font-weight: 900;">परीक्षा प्रपत्र - 128</span>
+  </div>
+</div>
         <!-- मुख्य फॉर्म सेक्शन -->
         <div class="flex flex-col flex-grow">
             <!-- पहली पंक्ति (विद्यालय का नाम) -->
