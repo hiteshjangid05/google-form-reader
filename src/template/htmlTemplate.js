@@ -31,32 +31,34 @@ export default function generateHtmlFromTemplate(rowData) {
         .form-field {
             display: flex;
             align-items: center;
-            padding: 4px 0;
+            padding: 0.5px 0;
             width: 100%;
+            margin-bottom: 0;
         }
         .form-label {
             flex-shrink: 0;
             width: auto;
             font-size: 0.65rem;
-            color: #333;
+            color: #000;
             padding-right: 8px;
             white-space: nowrap;
+            margin-bottom: 0;
+            font-size: 0.70rem;
         }
         .form-input {
             flex-grow: 1;
             border: none;
             border-bottom: 1px solid #ccc;
             padding: 2px 0;
-            font-size: 0.65rem;
-            color: #555;
+            font-size: 0.70rem;
+            color: #000;
             outline: none;
             background-color: transparent;
-            width: 100%;
             min-width: 0;
         }
         .signature-box {
-            width: 150px;
-            height: 70px;
+            width: 75px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -65,18 +67,17 @@ export default function generateHtmlFromTemplate(rowData) {
             overflow: hidden;
         }
         .signature-img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 90%;
+            max-height: 90%;
             object-fit: contain;
         }
         .two-col-container {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 8px;
         }
         .two-col-item {
             flex: 1;
-            min-width: 280px;
+            min-width: 100px;
             padding-right: 16px;
         }
         .two-col-item:last-child {
@@ -84,7 +85,7 @@ export default function generateHtmlFromTemplate(rowData) {
         }
         @media (max-width: 768px) {
             .a4-page {
-                padding: 15mm;
+                padding: 10mm;
             }
             .form-label {
                 width: auto;
@@ -101,14 +102,14 @@ export default function generateHtmlFromTemplate(rowData) {
     <div class="a4-page flex flex-col">
         <!-- हेडर सेक्शन -->
         <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; width: 100%;">
-  <div style="width: 25%; font-weight: bold; font-size: 0.35rem; text-align: left;">परीक्षा/2026</div>
+  <div style="width: 25%; font-weight: bold; font-size: 0.65rem; text-align: left;">परीक्षा/2026</div>
   <div style="width: 50%; text-align: center;">
-    <div style="font-size: 0.75rem; font-weight: bold;">माध्यमिक शिक्षा बोर्ड, राजस्थान, अजमेर</div>
-    <div style="font-size: 0.5rem; font-weight: bold; margin-top: 0.5rem;">
-      आवेदन पत्र एवं परीक्षा शुल्क विवरण वर्ष - <span style="font-weight: 500;">2026</span>
+    <div style="font-size: 1rem; font-weight: bold;">माध्यमिक शिक्षा बोर्ड, राजस्थान, अजमेर</div>
+    <div style="font-size: .75rem; font-weight: bold;">
+      आवेदन पत्र एवं परीक्षा शुल्क विवरण वर्ष - <span style="font-weight: bold;">2026</span>
     </div>
   </div>
-  <div style="width: 25%; font-weight: bold; font-size: 0.35rem; text-align: right;">
+  <div style="width: 25%; font-weight: bold; font-size: 0.65rem; text-align: right;">
     <span style="font-weight: 900;">परीक्षा प्रपत्र - 128</span>
   </div>
 </div>
@@ -326,78 +327,46 @@ export default function generateHtmlFromTemplate(rowData) {
             </div>
             <!-- हस्ताक्षर सेक्शन 1 -->
             <div class="flex justify-end mb-8">
-                <div class="flex flex-col items-center mr-16">
-                    <div class="signature-box mb-1">
-                        <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
-                    </div>
-                    <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
-                    <div class="text-xs text-gray-600"></div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="signature-box mb-1">
-                        <img src="signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
-                    </div>
-                    <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
-                    <div class="text-xs text-gray-600">बोर्ड नोडल केंद्र (04/20)</div>
-                </div>
+                <div style="display: flex; justify-content: flex-end; width: 100%; margin-bottom: 2rem;">
+  <div style="display: flex; flex-direction: column; align-items: center; margin-right: 4rem;">
+    <div class="signature-box mb-1">
+      <img src="./signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
+    </div>
+    <div style="font-size: 0.75rem; font-weight: 300;"><b>हस्ताक्षर प्रभारी</b></div>
+    <div style="font-size: 0.75rem; font-weight: 300;"><b>बोर्ड नोडल केंद्र (04/20)</b></div>
+  </div>
+</div>
+                
             </div>
             <!-- उपस्थिति प्रमाण पत्र सेक्शन -->
-            <div class="flex flex-col items-center text-center mb-8">
-                <div class="text-base font-semibold mb-2">कार्यालय बोर्ड नोडल केंद्र पीएम महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</div>
-                <div class="text-sm font-medium mb-4 underline">उपस्थिति प्रमाण पत्र</div>
-            </div>
-            <div class="two-col-container mb-2">
-                <div class="two-col-item">
-                    <div class="form-field">
-                        <span class="form-label">क्रमांक -</span>
-                        <input type="text" class="form-input"></p>
-                    </div>
-                </div>
-                <div class="two-col-item">
-                    <div class="form-field">
-                        <span class="form-label">दिनांक -</span>
-                        <p id="attendanceDate" type="text" class="form-input"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="two-col-container mb-2">
-                <div class="two-col-item">
-                    <div class="form-field">
-                        <span class="form-label">प्रमाणित किया जाता है कि श्री/श्रीमती -</span>
-                        <p id="EmployeeName" type="text" class="form-input">${rowData["EMPLOYEE NAME"]}</p>
-                    </div>
-                </div>
-                <div class="two-col-item">
-                    <div class="form-field">
-                        <span class="form-label">पद -</span>
-                        <p id="Designation" type="text" class="form-input">${rowData["DESIGNATION"]}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-wrap items-center mb-8">
-                <div class="form-field flex-1 mr-2">
-                    <span class="form-label">पदस्थापन स्थान -</span>
-                    <p id="postingPlace" type="text" class="form-input">${rowData["POSTING PLACE"]}</p>
-                </div>
-                <span class="text-sm mr-2">ने बोर्ड परीक्षा 2026 के आवेदन पत्र</span>
-            </div>
-            <div class="flex flex-wrap items-center mb-8">
-                <div class="form-field flex-1 mr-2">
-                    <span class="form-label">जमा करवाने हेतु आज दिनांक -</span>
-                    <p id="attendanceDate" type="text" class="form-input">${rowData["ATTENDANCE DATE"]}</p>
-                </div>
-                <span class="text-sm mr-2">को अपनी उपस्थिति इस कार्यालय में दी</span>
-            </div>
+            <div style="width: 100%; text-align: center; padding-top: -1rem; margin-bottom: 1rem;">
+    <div style="font-size: 1rem; font-weight: bold;">कार्यालय बोर्ड नोडल केंद्र पीएम महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</div>
+    <div style="font-size: 1rem; font-weight: bold; margin-top: 0.5rem;">
+      उपस्थिति प्रमाण पत्र
+    </div>
+  </div>
+            <!-- क्रमांक और दिनांक (first row) -->
+<p style="font-size:0.75rem; color:#000; margin-bottom:2px;">
+  क्रमांक - <span id="rowNo">${rowData["Timestamp"]}</span>,
+  दिनांक - <span id="attendanceDate">${rowData["ATTENDANCE DATE"]}</span>,
+  प्रमाणित किया जाता है कि श्री/श्रीमती - <span id="employeeName">${rowData["EMPLOYEE NAME"]}</span>,
+  पद - <span id="designation">${rowData["DESIGNATION"]}</span>,
+  पदस्थापन स्थान - <span id="postingPlace">${rowData["POSTING PLACE"]}</span>,
+  ने बोर्ड परीक्षा 2026 के आवेदन पत्र,
+  जमा करवाने हेतु आज दिनांक - <span id="submitDate">${rowData["ATTENDANCE DATE"]}</span>,
+  को अपनी उपस्थिति इस कार्यालय में दी |
+</p>
             <!-- हस्ताक्षर सेक्शन 2 -->
-            <div class="flex justify-end">
-                <div class="flex flex-col items-center">
-                    <div class="signature-box mb-1">
-                        <img src="/signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
-                    </div>
-                    <div class="text-sm font-medium">हस्ताक्षर प्रभारी</div>
-                    <div class="text-xs text-gray-600">बोर्ड नोडल केंद्र (04/20)</div>
-                </div>
-            </div>
+<div class="flex justify-end mb-8">
+                <div style="display: flex; justify-content: flex-end; width: 100%; margin-bottom: 2rem;">
+  <div style="display: flex; flex-direction: column; align-items: center; margin-right: 4rem;">
+    <div class="signature-box mb-1">
+      <img src="./signature.jpg" alt="हस्ताक्षर प्लेसहोल्डर" class="signature-img">
+    </div>
+    <div style="font-size: 0.75rem; font-weight: 300;"><b>हस्ताक्षर प्रभारी</b></div>
+    <div style="font-size: 0.75rem; font-weight: 300;"><b>बोर्ड नोडल केंद्र (04/20)</b></div>
+  </div>
+</div>
         </div>
     </div>
     <script>
