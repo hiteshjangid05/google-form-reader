@@ -31,7 +31,7 @@ export default function generateHtmlFromTemplate(rowData) {
         .form-field {
             display: flex;
             align-items: center;
-            padding: 0.5px 0;
+            padding: 0.5px -1px;
             width: 100%;
             margin-bottom: 0;
         }
@@ -67,8 +67,8 @@ export default function generateHtmlFromTemplate(rowData) {
             overflow: hidden;
         }
         .signature-img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 160%;
+            max-height: 160%;
             object-fit: contain;
         }
         .two-col-container {
@@ -120,13 +120,13 @@ export default function generateHtmlFromTemplate(rowData) {
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">विद्यालय का नाम -</span>
-                        <p id="schoolName" type="text" class="form-input">${rowData["SCHOOL NAME"]}</p>
+                        <p id="schoolName" type="text" class="form-input">${rowData["SCHOOL NAME\nविद्यालय का नाम "]}</p>
                     </div>
                 </div>
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">विद्यालय कोड -</span>
-                        <p id="schoolCode" type="text" class="form-input">${rowData["SCHOOL CODE"]}</p>
+                        <p id="schoolCode" type="text" class="form-input">${rowData["SCHOOL CODE\n(BOARD LOGIN ID)\nविद्यालय कोड "]}</p>
                     </div>
                 </div>
             </div>
@@ -135,13 +135,13 @@ export default function generateHtmlFromTemplate(rowData) {
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">संस्थाप्रधान का नाम -</span>
-                        <p id="principalName" type="text" class="form-input">${rowData["PRINCIPAL NAME"]}</p>
+                        <p id="principalName" type="text" class="form-input">${rowData["PRINCIPAL NAME\nसंस्थाप्रधान का नाम "]}</p>
                     </div>
                 </div>
                 <div class="two-col-item">
                     <div class="form-field">
                         <span class="form-label">मोबाइल नं. -</span>
-                        <p id="principalMobileNo" type="text" class="form-input">${rowData["PRINCIPAL MOBILE NUMBER"]}</p>
+                        <p id="principalMobileNo" type="text" class="form-input">${rowData["PRINCIPAL MOBILE NUMBER\nसंस्थाप्रधान मोबाइल नंबर "]}</p>
                     </div>
                 </div>
             </div>
@@ -151,13 +151,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 12 कुल (नियमित) आवेदन -</span>
-                            <p id="class12RegTotalForm" type="text" class="form-input">${rowData["CLASS 12 (REG) TOTAL FORMS"]}</p>
+                            <p id="class12RegTotalForm" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTOTAL FORMS\nकक्षा 12 (नियमित परीक्षार्थी)\nकुल आवेदन "]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class12RegTotalFee" type="text" class="form-input">${rowData["CLASS 12 (REG) TOTAL FEE"]}</p>
+                            <p id="class12RegTotalFee" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTOTAL FEE \nकक्षा 12 (नियमित परीक्षार्थी)\nकुल शुल्क"]}</p>
                         </div>
                     </div>
                 </div>
@@ -165,13 +165,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class12RegTxnNo1" type="text" class="form-input">${rowData["CLASS 12 (REG) TXN NO. 1"]}</p>
+                            <p id="class12RegTxnNo1" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTRANSACTION NO. 1"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12RegTxnNo1Date" type="text" class="form-input">${rowData["CLASS 12 (REG) TXN NO. 1 DATE"]}</p>
+                            <p id="class12RegTxnNo1Date" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTRANSACTION NO. 1 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -179,13 +179,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 2 -</span>
-                            <p id="class12RegTxnNo2" type="text" class="form-input">${rowData["CLASS 12 (REG) TXN NO. 2"]}</p>
+                            <p id="class12RegTxnNo2" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTRANSACTION NO. 2"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12RegTxnNo2Date" type="text" class="form-input">${rowData["CLASS 12 (REG) TXN NO. 2 DATE"]}</p>
+                            <p id="class12RegTxnNo2Date" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTRANSACTION NO. 2 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -193,13 +193,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 3 -</span>
-                            <p id="class12RegTxnNo3" type="text" class="form-input">${rowData["CLASS 12 (REG) TXN NO. 3"]}</p>
+                            <p id="class12RegTxnNo3" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTRANSACTION NO. 3"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12RegTxnNo3Date" type="text" class="form-input">${rowData["CLASS 12 (REG) TXN NO. 3 DATE"]}</p>
+                            <p id="class12RegTxnNo3Date" type="text" class="form-input">${rowData["CLASS 12 (REGULAR)\nTRANSACTION NO. 3 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -210,13 +210,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 12 कुल (स्वयंपाठी) आवेदन -</span>
-                            <p id="class12PriTotal" type="text" class="form-input">${rowData["CLASS 12 (PRI) TOTAL FORMS"]}</p>
+                            <p id="class12PriTotal" type="text" class="form-input">${rowData["CLASS 12 (PRIVATE)\nTOTAL FORMS\nकक्षा 12 (स्वयंपाठी परीक्षार्थी)\nकुल आवेदन"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class12PriTotalFee" type="text" class="form-input">${rowData["CLASS 12 (PRI) TOTAL FEE"]}</p>
+                            <p id="class12PriTotalFee" type="text" class="form-input">${rowData["CLASS 12 (PRIVATE)\nTOTAL FEE \nकक्षा 12 (स्वयंपाठी परीक्षार्थी)\nकुल शुल्क"]}</p>
                         </div>
                     </div>
                 </div>
@@ -224,13 +224,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class12PriTxnNo1" type="text" class="form-input">${rowData["CLASS 12 (PRI) TXN NO. 1"]}</p>
+                            <p id="class12PriTxnNo1" type="text" class="form-input">${rowData["CLASS 12 (PRIVATE)\nTRANSACTION NO. 1"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class12PriTxnNo1Date" type="text" class="form-input">${rowData["CLASS 12 (PRI) TXN NO. 1 DATE"]}</p>
+                            <p id="class12PriTxnNo1Date" type="text" class="form-input">${rowData["CLASS 12 (PRIVATE)\nTRANSACTION NO. 1 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -241,13 +241,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 10 कुल (नियमित) आवेदन -</span>
-                            <p id="class10RegTotalForms" type="text" class="form-input">${rowData["CLASS 10 (REG) TOTAL FORMS"]}</p>
+                            <p id="class10RegTotalForms" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTOTAL FORMS\nकक्षा 10 (नियमित परीक्षार्थी)\nकुल आवेदन"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class10RegTotalFee" type="text" class="form-input">${rowData["CLASS 10 (REG) TOTAL FEE"]}</p>
+                            <p id="class10RegTotalFee" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTOTAL FEE \nकक्षा 10 (नियमित परीक्षार्थी)\nकुल शुल्क"]}</p>
                         </div>
                     </div>
                 </div>
@@ -255,13 +255,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class10RegTxnNo1" type="text" class="form-input">${rowData["CLASS 10 (REG) TXN NO. 1"]}</p>
+                            <p id="class10RegTxnNo1" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTRANSACTION NO. 1"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10RegTxnNo1Date" type="text" class="form-input">${rowData["CLASS 10 (REG) TXN NO. 1 DATE"]}</p>
+                            <p id="class10RegTxnNo1Date" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTRANSACTION NO. 1 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -269,13 +269,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 2 -</span>
-                            <p id="class10RegTxnNo2" type="text" class="form-input">${rowData["CLASS 10 (REG) TXN NO. 2"]}</p>
+                            <p id="class10RegTxnNo2" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTRANSACTION NO. 2"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10RegTxnNo2Date" type="text" class="form-input">${rowData["CLASS 10 (REG) TXN NO. 2 DATE"]}</p>
+                            <p id="class10RegTxnNo2Date" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTRANSACTION NO. 2 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -283,13 +283,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 3 -</span>
-                            <p id="class10RegTxnNo3" type="text" class="form-input">${rowData["CLASS 10 (REG) TXN NO. 3"]}</p>
+                            <p id="class10RegTxnNo3" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTRANSACTION NO. 3"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10RegTxnNo3Date" type="text" class="form-input">${rowData["CLASS 10 (REG) TXN NO. 3 DATE"]}</p>
+                            <p id="class10RegTxnNo3Date" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTRANSACTION NO. 3 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -300,13 +300,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 10 कुल (स्वयंपाठी) आवेदन -</span>
-                            <p id="class10PriTotal" type="text" class="form-input">${rowData["CLASS 10 (PRI) TOTAL FORMS"]}</p>
+                            <p id="class10PriTotal" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTOTAL FORMS\nकक्षा 10 (नियमित परीक्षार्थी)\nकुल आवेदन"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class10PriTotalFee" type="text" class="form-input">${rowData["CLASS 10 (PRI) TOTAL FEE"]}</p>
+                            <p id="class10PriTotalFee" type="text" class="form-input">${rowData["CLASS 10 (PRIVATE)\nTOTAL FEE\nकक्षा 10 (स्वयंपाठी परीक्षार्थी)\nकुल शुल्क"]}</p>
                         </div>
                     </div>
                 </div>
@@ -314,13 +314,13 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">ट्रांजेक्शन नं. 1 -</span>
-                            <p id="class10PriTxnNo1" type="text" class="form-input">${rowData["CLASS 10 (PRI) TXN NO. 1"]}</p>
+                            <p id="class10PriTxnNo1" type="text" class="form-input">${rowData["CLASS 10 (PRIVATE)\nTRANSACTION NO. 1"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">दिनांक -</span>
-                            <p id="class10PriTxnNo1Date" type="text" class="form-input">${rowData["CLASS 10 (PRI) TXN NO. 1 DATE"]}</p>
+                            <p id="class10PriTxnNo1Date" type="text" class="form-input">${rowData["CLASS 10 (PRIVATE)\nTRANSACTION NO. 1 DATE"]}</p>
                         </div>
                     </div>
                 </div>
@@ -340,18 +340,26 @@ export default function generateHtmlFromTemplate(rowData) {
             </div>
             <!-- उपस्थिति प्रमाण पत्र सेक्शन -->
             <div style="width: 100%; text-align: center; padding-top: -1rem; margin-bottom: 1rem;">
-    <div style="font-size: 1rem; font-weight: bold;">कार्यालय बोर्ड नोडल केंद्र पीएम महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</div>
+    <div style="font-size: 1rem; font-weight: bold;">कार्यालय बोर्ड नोडल केंद्र पीएमश्री महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</div>
     <div style="font-size: 1rem; font-weight: bold; margin-top: 0.5rem;">
       उपस्थिति प्रमाण पत्र
     </div>
   </div>
             <!-- क्रमांक और दिनांक (first row) -->
+            <!-- Replace your current code for these two fields with the following: -->
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: #000; margin-bottom: 2px;">
+  <div>
+    क्रमांक - <span id="rowNo">${rowData["Sr No"]}</span>
+  </div>
+  <div>
+    दिनांक - <span id="attendanceDate">${rowData["ATTENDANCE DATE\nउपस्तिथि दिनांक"]}</span>
+  </div>
+</div><br>
 <p style="font-size:0.75rem; color:#000; margin-bottom:2px;">
-  क्रमांक - <span id="rowNo">${rowData["Timestamp"]}</span>,
-  दिनांक - <span id="attendanceDate">${rowData["ATTENDANCE DATE"]}</span>,
-  प्रमाणित किया जाता है कि श्री/श्रीमती - <span id="employeeName">${rowData["EMPLOYEE NAME"]}</span>,
-  पद - <span id="designation">${rowData["DESIGNATION"]}</span>,
-  पदस्थापन स्थान - <span id="postingPlace">${rowData["POSTING PLACE"]}</span>,
+  
+  &nbsp&nbsp&nbsp&nbspप्रमाणित किया जाता है कि श्री/श्रीमती - <span id="employeeName">${rowData["EMPLOYEE NAME\nकर्मचारी का नाम"]}</span>,
+  पद - <span id="designation">${rowData["DESIGNATION\nपद "]}</span>,
+  पदस्थापन स्थान - <span id="postingPlace">${rowData["POSTING PLACE\nपदस्थापन स्थान"]}</span>,
   ने बोर्ड परीक्षा 2026 के आवेदन पत्र,
   जमा करवाने हेतु आज दिनांक - <span id="submitDate">${rowData["ATTENDANCE DATE"]}</span>,
   को अपनी उपस्थिति इस कार्यालय में दी |

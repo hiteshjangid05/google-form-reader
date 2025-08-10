@@ -9,5 +9,6 @@ export const fetchResponses = async () => {
     header: true,
     skipEmptyLines: true,
   });
+  console.log("Fetched responses:", results.data);
   return results.data;
 };
