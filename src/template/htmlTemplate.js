@@ -361,7 +361,7 @@ export default function generateHtmlFromTemplate(rowData) {
   पद - <span id="designation">${rowData["DESIGNATION\nपद "]}</span>,
   पदस्थापन स्थान - <span id="postingPlace">${rowData["POSTING PLACE\nपदस्थापन स्थान"]}</span>,
   ने बोर्ड परीक्षा 2026 के आवेदन पत्र,
-  जमा करवाने हेतु आज दिनांक - <span id="submitDate">${rowData["ATTENDANCE DATE"]}</span>,
+  जमा करवाने हेतु आज दिनांक - <span id="submitDate">${rowData["ATTENDANCE DATE\nउपस्तिथि दिनांक"]}</span>,
   को अपनी उपस्थिति इस कार्यालय में दी |
 </p>
             <!-- हस्ताक्षर सेक्शन 2 -->
