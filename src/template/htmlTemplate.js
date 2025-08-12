@@ -247,7 +247,7 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class10RegTotalFee" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTOTAL FEE \nकक्षा 10 (नियमित परीक्षार्थी)\nकुल शुल्क"]}</p>
+                            <p id="class10RegTotalFee" type="text" class="form-input">${rowData["CLASS 10 (PRIVATE)\nTOTAL FEE\nकक्षा 10 (स्वयंपाठी परीक्षार्थी)\nकुल शुल्क"]}</p>
                         </div>
                     </div>
                 </div>
