@@ -79,7 +79,8 @@ const ResponseTable = ({ responses }) => {
   const message = `Hello ${row["EMPLOYEE NAME\nकर्मचारी का नाम"]},\n\nPlease find your form at the link below:\n${fileUrl}`;
   const encodedMessage = encodeURIComponent(message);
   const phoneNumber = `+91${row["EMPLOYEE'S WhatsApp Number\nकर्मचारी के WhatsApp नंबर "]}`// Make sure it includes country code like "918123456789"
-  console.log(encodedMessage, phoneNumber);
+  console.log("Whatsapp Number:", phoneNumber);
+  console.log("Encoded Message:", encodedMessage);
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   window.open(whatsappURL, "whatsappWindow");
   console.log("File uploaded:", data);
