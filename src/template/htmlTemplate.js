@@ -247,7 +247,7 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कुल शुल्क -</span>
-                            <p id="class10RegTotalFee" type="text" class="form-input">${rowData["CLASS 10 (PRIVATE)\nTOTAL FEE\nकक्षा 10 (स्वयंपाठी परीक्षार्थी)\nकुल शुल्क"]}</p>
+                            <p id="class10RegTotalFee" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTOTAL FEE \nकक्षा 10 (नियमित परीक्षार्थी)\nकुल शुल्क "]}</p>
                         </div>
                     </div>
                 </div>
@@ -300,7 +300,7 @@ export default function generateHtmlFromTemplate(rowData) {
                     <div class="two-col-item">
                         <div class="form-field">
                             <span class="form-label">कक्षा 10 कुल (स्वयंपाठी) आवेदन -</span>
-                            <p id="class10PriTotal" type="text" class="form-input">${rowData["CLASS 10 (REGULAR)\nTOTAL FORMS\nकक्षा 10 (नियमित परीक्षार्थी)\nकुल आवेदन"]}</p>
+                            <p id="class10PriTotal" type="text" class="form-input">${rowData["CLASS 10 (PRIVATE)\nTOTAL FORMS\nकक्षा 10 (स्वयंपाठी परीक्षार्थी)\nकुल आवेदन"]}</p>
                         </div>
                     </div>
                     <div class="two-col-item">
@@ -337,7 +337,7 @@ export default function generateHtmlFromTemplate(rowData) {
   </div>
 </div>
 <div style="display: flex; align-items: center; margin: 1em 0;"><hr style="flex:1; border:none; border-top:1px dashed #000;"><span style="margin: 0 8px; display: inline-block; transform: rotate(-90deg);">✂️</span><hr style="flex:1; border:none; border-top:1px dashed #000;"></div>
-<br><br>
+<br>
 
     </div>
             <!-- उपस्थिति प्रमाण पत्र सेक्शन -->
