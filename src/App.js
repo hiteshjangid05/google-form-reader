@@ -1,7 +1,8 @@
+// src/App.js
 import React, { useEffect, useState } from "react";
-import {fetchResponses} from "./utils/fetchResponses";
+import { fetchResponses } from "./utils/fetchResponses";
 import ResponseTable from "./components/ResponseTable";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [responses, setResponses] = useState([]);
@@ -20,11 +21,7 @@ function App() {
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial" }}>
       <h2>Google Sheet Responses</h2>
-      {loading ? (
-        <p>Loading responses...</p>
-      ) : (
-        <ResponseTable responses={responses} />
-      )}
+      {loading ? <p>Loading responses...</p> : <ResponseTable responses={responses} />}
     </div>
   );
 }

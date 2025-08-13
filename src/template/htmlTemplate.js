@@ -77,8 +77,8 @@ export default function generateHtmlFromTemplate(rowData) {
         }
         .two-col-item {
             flex: 1;
-            min-width: 100px;
-            padding-right: 16px;
+            flex: 0 0 48%;
+            max-width: 48%;
         }
         .two-col-item:last-child {
             padding-right: 0;
@@ -336,8 +336,10 @@ export default function generateHtmlFromTemplate(rowData) {
     <div style="font-size: 0.75rem; font-weight: 300;"><b>बोर्ड नोडल केंद्र (04/20)</b></div>
   </div>
 </div>
-                
-            </div>
+<div style="display: flex; align-items: center; margin: 1em 0;"><hr style="flex:1; border:none; border-top:1px dashed #000;"><span style="margin: 0 8px; display: inline-block; transform: rotate(-90deg);">✂️</span><hr style="flex:1; border:none; border-top:1px dashed #000;"></div>
+<br><br>
+
+    </div>
             <!-- उपस्थिति प्रमाण पत्र सेक्शन -->
             <div style="width: 100%; text-align: center; padding-top: -1rem; margin-bottom: 1rem;">
     <div style="font-size: 1rem; font-weight: bold;">कार्यालय बोर्ड नोडल केंद्र पीएमश्री महात्मा गांधी राजकीय विद्यालय स्टेशन रोड बाड़मेर</div>
@@ -349,7 +351,7 @@ export default function generateHtmlFromTemplate(rowData) {
             <!-- Replace your current code for these two fields with the following: -->
 <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: #000; margin-bottom: 2px;">
   <div>
-    क्रमांक - <span id="rowNo">${rowData["Sr No"]}</span>
+    क्रमांक - <span id="rowNo">म.गाँ.रा.वि/2026/${rowData["Sr No"]}</span>
   </div>
   <div>
     दिनांक - <span id="attendanceDate">${rowData["ATTENDANCE DATE\nउपस्तिथि दिनांक"]}</span>
